@@ -74,7 +74,7 @@ class HttpClient
 
         $this->logger->info(sprintf(" Url: %s", $post_url));
         // Do not log requests that could contain CC info.
-        $this->logger->info(sprintf("Request to AnetApi: \n%s", $xmlRequest));
+        // $this->logger->info(sprintf("Request to AnetApi: \n%s", $xmlRequest));
 
         if ($this->VERIFY_PEER) {
             curl_setopt($curl_request, CURLOPT_CAINFO, dirname(dirname(__FILE__)) . '/../../ssl/cert.pem');

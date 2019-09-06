@@ -112,7 +112,7 @@ abstract class ApiOperationBase implements IApiOperation
 	$this->apiRequest->setClientId("sdk-php-" . \net\authorize\api\constants\ANetEnvironment::VERSION);
 
         $this->logger->info("Request Creation Begin");
-        $this->logger->debug($this->apiRequest);
+        // $this->logger->debug($this->apiRequest);
         // $xmlRequest = $this->serializer->serialize($this->apiRequest, 'xml');
         //$requestArray = [lcfirst((new \ReflectionClass($this->apiRequest))->getShortName()) => $this->apiRequest];
         
