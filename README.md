@@ -1,4 +1,4 @@
-# Authorize.Net PHP SDK
+# Softway Authorize.Net PHP SDK
 
 [![Travis CI Status](https://travis-ci.org/AuthorizeNet/sdk-php.svg?branch=master)](https://travis-ci.org/AuthorizeNet/sdk-php)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/AuthorizeNet/sdk-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AuthorizeNet/sdk-php/?branch=master)
