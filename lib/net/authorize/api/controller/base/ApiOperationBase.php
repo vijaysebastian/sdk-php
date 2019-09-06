@@ -109,9 +109,14 @@ abstract class ApiOperationBase implements IApiOperation
     {
         $this->beforeExecute();
 
-	$this->apiRequest->setClientId("sdk-php-" . \net\authorize\api\constants\ANetEnvironment::VERSION);
+	    $this->apiRequest->setClientId("sdk-php-" . \net\authorize\api\constants\ANetEnvironment::VERSION);
+        if($this->apiRequest->getPaymentProfile() && $this->apiRequest->getPaymentProfile()->getBillTo() && $this->apiRequest->getPaymentProfile()->getBillTo()->jsonSerialize()){
+                $array = $this->apiRequest->getPaymentProfile()->getBillTo()->jsonSerialize();
+                $json  = json_encode($array);
+                $this->logger->info("Billing address : ".$json);
+        }
 
-        $this->logger->info("Request Creation Begin");
+        // $this->logger->info("Request Creation Begin");
         // $this->logger->debug($this->apiRequest);
         // $xmlRequest = $this->serializer->serialize($this->apiRequest, 'xml');
         //$requestArray = [lcfirst((new \ReflectionClass($this->apiRequest))->getShortName()) => $this->apiRequest];
@@ -123,7 +128,7 @@ abstract class ApiOperationBase implements IApiOperation
 
         $requestArray = [$requestRoot => $this->apiRequest];
 	
-        $this->logger->info("Request  Creation End");
+        // $this->logger->info("Request  Creation End");
 
         $this->httpClient->setPostUrl( $endPoint);
         /*$xmlResponse = $this->httpClient->_sendRequest($xmlRequest);
