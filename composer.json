@@ -1,10 +1,10 @@
 {
-    "name": "authorizenet/authorizenet",
+    "name": "vijaysebastian/sdk-php",
     "type": "library",
-    "description": "Official PHP SDK for Authorize.Net",
+    "description": "Forked PHP SDK for Authorize.Net",
     "keywords": ["authorizenet", "authorize.net", "payment", "ecommerce"],
     "license": "proprietary",
-    "homepage": "http://developer.authorize.net",
+    "homepage": "",
     "require": {
         "php": ">=5.6",
         "ext-curl": "*",
