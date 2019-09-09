@@ -110,7 +110,7 @@ abstract class ApiOperationBase implements IApiOperation
         $this->beforeExecute();
 
 	    $this->apiRequest->setClientId("sdk-php-" . \net\authorize\api\constants\ANetEnvironment::VERSION);
-        if($this->apiRequest->getPaymentProfile() && $this->apiRequest->getPaymentProfile()->getBillTo() && $this->apiRequest->getPaymentProfile()->getBillTo()->jsonSerialize()){
+        if(method_exists($this->apiRequest, 'getPaymentProfile') && $this->apiRequest->getPaymentProfile() && $this->apiRequest->getPaymentProfile()->getBillTo() && $this->apiRequest->getPaymentProfile()->getBillTo()->jsonSerialize()){
                 $array = $this->apiRequest->getPaymentProfile()->getBillTo()->jsonSerialize();
                 $json  = json_encode($array);
                 $this->logger->info("Billing address : ".$json);
